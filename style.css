@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Poppins:wght@400;600&display=swap");
 
 /* Box sizing rules */
 *,
@@ -17,14 +17,22 @@ html {
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin-block-end: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -35,14 +43,21 @@ body {
 }
 
 /* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
   line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
@@ -60,8 +75,10 @@ picture {
 }
 
 /* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
+input,
+button,
+textarea,
+select {
   font-family: inherit;
   font-size: inherit;
 }
@@ -83,33 +100,34 @@ textarea:not([rows]) {
 }
 
 .pop-reg {
-  font-family: 'Poppins', system-ui;
+  font-family: "Poppins", system-ui;
   font-weight: 400;
   color: white;
 }
 
 .pop-bold {
-  font-family: 'Poppins', system-ui;
-  font-weight: 600; 
+  font-family: "Poppins", system-ui;
+  font-weight: 600;
   color: white;
 }
 
 .open-sans {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-family: 400;
   color: white;
 }
 
 main {
   min-height: 100vh;
-  background-image: url('images/bg-desktop.svg');
+  background-image: url("images/bg-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: var(--violet);
   padding: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 .logo {
   margin-bottom: 1rem;
@@ -125,6 +143,10 @@ main {
   gap: 1rem;
 }
 
+.text-area h1 {
+  font-size: 2.5rem;
+}
+
 button {
   color: var(--violet) !important;
   padding: 15px;
@@ -133,12 +155,12 @@ button {
   transition: all linear 100ms;
   width: 200px;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 button:hover {
   background-color: var(--soft-magenta);
-  color: white !important; 
-  
+  color: white !important;
 }
 
 .social-links {
@@ -148,7 +170,7 @@ button:hover {
 
 .sIcons {
   aspect-ratio: 1/1;
-  width: 50px;
+  width: 45px;
   fill: white;
   border: 2px solid white;
   padding: 10px;
@@ -161,7 +183,44 @@ button:hover {
   transition: all linear 100ms;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
 .sIcons:hover {
   fill: var(--soft-magenta);
   border-color: var(--soft-magenta);
+}
+
+@media (min-width: 800px) {
+
+  main {
+    justify-content: center;
+    background-image: url('/images/bg-desktop.svg');
+  }
+
+  .content {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .content > div {
+    flex: 1;
+  }
+
+
+
+  .text-area {
+    /* flex: 1; */
+    text-align: start;
+    align-items: start;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .social-links {
+    align-self: flex-end;
+  }
+  
 }
